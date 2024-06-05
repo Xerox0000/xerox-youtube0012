@@ -352,6 +352,7 @@ if (video_data.params.save_player_pos) {
     let lastUpdated = 0;
 
     if(!hasTimeParam) set_seconds_after_start(rememberedTime);
+    if (rememberedTime >= video_data.length_seconds - 20 && !hasTimeParam) set_seconds_after_start(0);
 
     player.on('timeupdate', function () {
         const raw = player.currentTime();
